@@ -1,10 +1,10 @@
 float x = 850;
-float y = 100; 
+float y = 0; 
 float s; 
 float x1 = 50;
-float y1 = 400.5; 
+float y1 = 450; 
 float x2 = 950;
-float y2 = 725; 
+float y2 = 900; 
 
 
 void setup() {
