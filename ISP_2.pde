@@ -4,7 +4,7 @@ float s;
 float x1 = 50;
 float y1 = 450; 
 float x2 = 950;
-float y2 = 900; 
+float y2 = 800; 
 
 
 void setup() {
