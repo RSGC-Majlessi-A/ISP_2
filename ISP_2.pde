@@ -9,12 +9,12 @@ float y2 = 800;
 
 void setup() {
   size(900, 900);
-  frameRate(60);
+  frameRate(1000000);
   background(0);
 }
 
 void draw() {
-  background(0, 0, 0);
+  
   fill(0, 0, 0);
   ellipse(x, y, 1, 1);
 
@@ -35,16 +35,16 @@ void draw() {
     x = 900;
   }
   if ( x1 > 900) {
-    x1 = 50;
+    x1 = 10;
   }
   if ( x2 < 0) {
     x2 = 900;
   }
   
-  stroke(random(255), random (255), random (255));
+  stroke((255), (255), (255));
   line(x1, y1, x, y);
   
- stroke(random(255), random (255), random (255));
+ stroke((255), (255),(255));
   line(x1, y1, x2, y2);
   
   
