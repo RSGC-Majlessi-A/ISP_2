@@ -69,6 +69,11 @@ void draw() {
   if (thickness < 0) {
     thickness = 1;
   }
+
+  if (frameCount%60 == 0) {
+    rect(0, 0, 900, 900);
+  }
+
   strokeWeight(thickness);
   stroke((255), (255), (255), oppacity);//stroke color
   line(x1, y1, x, y);// line being drawn between top and middle 
