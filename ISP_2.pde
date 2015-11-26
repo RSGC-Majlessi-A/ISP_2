@@ -10,7 +10,7 @@ float d; // variable for distance
 float oppacity; 
 void setup() {
   size(900, 900);
-  frameRate(1000000);
+  frameRate(30);
   background(0);
 }
 
@@ -55,11 +55,11 @@ void draw() {
     thickness = 1;
   }
   strokeWeight(thickness);
-  stroke((255), (255), (255), 50);//stroke color
+  stroke((255), (255), (255), oppacity);//stroke color
   line(x1, y1, x, y);// line being drawn between top and middle 
 
   strokeWeight(thickness);
-  stroke((255), (255), (255), 50);//stroke color 
+  stroke((255), (255), (255), oppacity);//stroke color 
   line(x1, y1, x2, y2);//lines beingdrawn between middle and bottom
 }
 
