@@ -4,13 +4,13 @@ float s; // speed variable
 float x1 = 50; // x for middle circle 
 float y1 = 450; // y for middle circle 
 float x2 = 950; // x for bottom circle 
-float y2 = 800; // y for bottom circle 
+float y2 = (random(0)); // y for bottom circle 
 float thickness; // variable for thickness of lines 
 float d; // variable for distance 
 float oppacity; 
 void setup() {
   size(900, 900);
-  frameRate(30);
+  frameRate(240);
   background(0);
 }
 
@@ -40,7 +40,22 @@ void draw() {
   x = x + s; // set the speed for the top circle 
   x1 = x1 - s; // set the speed for the middle circle 
   x2 = x2 + s; // set the speed for the bottom circle 
+  y2 = y2 +random(-15, 15);//allows y2 to change elevation randomly
+  y = y+random(-15, 15);// allows y to change elevaion randomly 
+  if ( y2 > 900) {
+    y2 = 800;
+  }
 
+  if (y2 < 450 ) {
+    y2 = 800;
+  }
+  if ( y > 450) {
+    y = 0;
+  }
+
+  if (y < 0 ) {
+    y = 50;
+  }
   if ( x < 0) {
     x = 900;
   }
