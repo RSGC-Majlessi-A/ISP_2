@@ -10,7 +10,7 @@ float d; // variable for distance
 float oppacity; 
 void setup() {
   size(900, 900);
-  frameRate(240);
+  frameRate(240000);
   background(0);
 }
 
@@ -93,4 +93,7 @@ void keyPressed() {
     stroke(random(255), random(255), random(255));
     line(x1, y1, x2, y2);
   }
+ if(key =='c') {
+  saveFrame("output-########.png");
+ }
 }
