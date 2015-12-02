@@ -8,10 +8,18 @@ float y2 = (random(0)); // y for bottom circle
 float thickness; // variable for thickness of lines 
 float d; // variable for distance 
 float oppacity; 
+
+import processing.sound.*;
+SoundFile edge;
+SoundFile nonEdge;
+
 void setup() {
   size(900, 900);
-  frameRate(240000);
+  frameRate(240);
   background(0);
+
+  edge = new SoundFile(this, "wake me up edge.mp3");
+  nonEdge = new SoundFile(this, "Wake me up non edge.mp3");
 }
 
 void draw() {
@@ -20,7 +28,7 @@ void draw() {
   // adjust thickness based on distacne between circles
   thickness = 5*d /1000;
   //println(thickness);
-  oppacity = 100*d / 1000;
+  oppacity = 100*d / 1000;// calcualte the oppacity based on distance 
 
 
   fill(0, 0, 0);
@@ -93,7 +101,14 @@ void keyPressed() {
     stroke(random(255), random(255), random(255));
     line(x1, y1, x2, y2);
   }
- if(key =='c') {
-  saveFrame("output-########.png");
- }
+  if (key =='c') {
+    saveFrame("output-########.png");
+  }
+
+  if (key == 'e') { 
+    edge.play();
+  }
+  if (key == 'r') {
+    nonEdge.play();
+  }
 }
