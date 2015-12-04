@@ -15,15 +15,16 @@ SoundFile nonEdge;
 
 void setup() {
   size(900, 900);
-  frameRate(240);
+  frameRate(30);
   background(0);
 
-  edge = new SoundFile(this, "wake me up edge.mp3");
-  nonEdge = new SoundFile(this, "Wake me up non edge.mp3");
+  edge = new SoundFile(this, "wake me up edge.mp3");// adds file to play on keypressed
+  nonEdge = new SoundFile(this, "Wake me up non edge.mp3");// adds file to play on keypressed
 }
 
 void draw() {
 
+  // every 5 seconds
   // calculate the distance between the two circles
   // adjust thickness based on distacne between circles
   thickness = 5*d /1000;
@@ -45,26 +46,27 @@ void draw() {
 
   s = -15; // set the speed 
 
-  x = x + s; // set the speed for the top circle 
-  x1 = x1 - s; // set the speed for the middle circle 
-  x2 = x2 + s; // set the speed for the bottom circle 
+  x = x + (random(s)); // set the speed for the top circle, randomizing it aswell 
+  x1 = x1 - (random(s)); // set the speed for the middle circle, with a random aspect
+  x2 = x2 + (random(s)); // set the speed for the bottom circle , with a random aspect
   y2 = y2 +random(-15, 15);//allows y2 to change elevation randomly
   y = y+random(-15, 15);// allows y to change elevaion randomly 
-  if ( y2 > 900) {
+  y1 = y1+random(-15,15);// randomizes the y for the middle circles 
+  if ( y2 > 900) { // if the third circle passes 900 it resets to 800
     y2 = 800;
   }
 
-  if (y2 < 450 ) {
+  if (y2 < 450 ) { // if the third circle passes 450 it resets to 800
     y2 = 800;
   }
-  if ( y > 450) {
+  if ( y > 450) { // if the first circle passes  450 it resets to 0
     y = 0;
   }
 
-  if (y < 0 ) {
+  if (y < 0 ) { // if the first circle is less than 0 it resets to 50
     y = 50;
   }
-  if ( x < 0) {
+  if ( x < 0) { // if the first circle is les than 0 it resets to 900 
     x = 900;
   }
   if ( x1 > 900) {
@@ -78,7 +80,10 @@ void draw() {
     thickness = 1;
   }
 
+  // when the 
   if (frameCount%60 == 0) {
+    fill(0, 0, 0, 30);
+    noStroke();
     rect(0, 0, 900, 900);
   }
 
