@@ -15,7 +15,7 @@ SoundFile nonEdge;
 
 void setup() {
   size(900, 900);
-  frameRate(30);
+  frameRate(60);
   background(0);
 
   edge = new SoundFile(this, "wake me up edge.mp3");// adds file to play on keypressed
@@ -51,7 +51,7 @@ void draw() {
   x2 = x2 + (random(s)); // set the speed for the bottom circle , with a random aspect
   y2 = y2 +random(-15, 15);//allows y2 to change elevation randomly
   y = y+random(-15, 15);// allows y to change elevaion randomly 
-  y1 = y1+random(-15,15);// randomizes the y for the middle circles 
+  y1 = y1+random(-15, 15);// randomizes the y for the middle circles 
   if ( y2 > 900) { // if the third circle passes 900 it resets to 800
     y2 = 800;
   }
@@ -74,6 +74,13 @@ void draw() {
   }
   if ( x2 < 0) {
     x2 = 900;
+  }
+  if ( y1 > 750) { //allows for the y1 to be reset if it goes too far down 
+    y1 = 450;
+  }
+
+  if (y1 <150) { // if the y1 is too low it reset back to the origonal position 
+    y1 = 450;
   }
 
   if (thickness < 0) {
